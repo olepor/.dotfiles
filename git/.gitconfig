@@ -1,0 +1,43 @@
+# This is Git's per-user configuration file.
+[core]
+	editor = vim
+# Please adapt and uncomment the following lines:
+	user = Ole Petter
+	email = olepor@student.matnat.uio.no
+	excludesfile = ~/.gitignore
+[user]
+	name = Ole P
+	email = olepor@matnat.uio.no
+[push]
+	default = simple
+[filter "hawser"]
+	clean = git hawser clean %f
+	smudge = git hawser smudge %f
+	required = true
+[color]
+	ui = auto
+[color "branch"]
+	current = yellow bold
+	local = green bold
+	remote = cyan bold
+[color "diff"]
+	meta = yellow bold
+	frag = magenta bold
+	old = red bold
+	new = green bold
+	whitespace = red reverse
+[color "status"]
+	added = green bold
+	changed = yellow bold
+	untracked = red bold
+[diff]
+	tool = vimdiff
+[difftool]
+	prompt = false
+[alias]
+	lg = log --all --oneline --graph --decorate
+	a = add
+	cm = commit
+	s = status
+	c = commit
+	unstage = reset
