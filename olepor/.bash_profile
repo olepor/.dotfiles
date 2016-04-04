@@ -1,8 +1,8 @@
 export PATH=/usr/local/bin:$PATH
 export USER="olepor"
-export PATH=${PATH}:/Users/olepetter/Library/Android/sdk/platform-tools/:/Users/olepetter/bin
-export MANPATH=${MANPATH}:/Users/olepetter/bin/man/man1
 export PATH=${PATH}:/Volumes/MATLAB_R2015b/MATLAB_R2015b.app/bin
+PATH=$PATH:~/bash_scripts
+export PATH
 
 # Set the prompt to show the path-to-cur-dir: cur-dir: $: 
 PS1='\w : \W : \$ : '
@@ -23,3 +23,6 @@ alias ..3="cd ../../.."
 
 test -r /sw/bin/init.sh && . /sw/bin/init.sh
 CDPATH=~/.paths
+
+# Everytime a new terminal is loaded, update the brew_installs file
+brew_track_files

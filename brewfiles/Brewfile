@@ -1,0 +1,12 @@
+tap 'caskroom/cask'
+tap 'homebrew/bundle'
+tap 'homebrew/core'
+brew 'xz'
+brew 'pkg-config'
+brew 'emacs', args: ['with-cocoa']
+cask 'firefox'
+cask 'google-chrome'
+cask 'java'
+cask 'karabiner'
+cask 'lastpass'
+cask 'seil'
