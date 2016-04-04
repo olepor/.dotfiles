@@ -2,6 +2,9 @@
 set completion-ignore-case on
 # List all matches in case multiple possible completions are possible
 set show-all-if-ambiguous on
+# enable vi-keybindings for use with readline
+set editing-mode vi
+set keymap vi
 # Flip through autocompletion matches with Shift-Tab.
 "\e[Z": menu-complete
 # Filtered history search
