@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<root>
+<item>
+      <!--
+          Based off an idea from http://stevelosh.com/blog/2012/10/a-modern-space-cadet/#controlescape
+      -->
+      <name>F19 to Escape and Control</name>
+      <appendix>Tap F19 for Escape, Hold F19 for Control</appendix>
+      <appendix>Works well with using Seil to remap CapsLock to F19(code 80).</appendix>
+      <identifier>bilalh.remap.f19_escape_control</identifier>
+      <autogen>
+        __KeyOverlaidModifier__
+        KeyCode::F19,
+        KeyCode::CONTROL_L,
+        KeyCode::ESCAPE
+      </autogen>
+    </item>
+</root>
