@@ -1,0 +1,9 @@
+#!/bash/bin
+f=`find -d ~/dotfiles | grep -E "\/[.][a-z]+" | grep -v "\/.git\/" | grep -v ".git$"`
+for file in $f
+do
+	echo ${file}
+	link ${file} ~/
+done
+
+

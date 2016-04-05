@@ -4,6 +4,15 @@ export PATH=${PATH}:/Volumes/MATLAB_R2015b/MATLAB_R2015b.app/bin
 PATH=$PATH:~/bash_scripts
 export PATH
 
+which -s brew
+if [[ $? != 0 ]] ; then
+    # Install Homebrew
+    # https://github.com/mxcl/homebrew/wiki/installation
+    /usr/bin/ruby -e "$(curl -fsSL https://raw.github.com/gist/323731)"
+else
+    brew update
+fi
+
 # Set the prompt to show the path-to-cur-dir: cur-dir: $: 
 PS1='\w : \W : \$ : '
 
