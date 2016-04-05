@@ -1,3 +1,9 @@
+# The keybinds are set through Karabiner and seil.
+# In order to remap caps-lock. Disable it in system-preferences.
+# Then symlink dotfiles karabiner/private.xml into ~/Library/Applicatioin\ Support/Karabiner/private.xml
+# Then reload xml from karabinercopy
+export ALTERNATE_EDITOR=""
+export EDITOR=emacsclient
 export PATH=/usr/local/bin:$PATH
 export USER="olepor"
 export PATH=${PATH}:/Volumes/MATLAB_R2015b/MATLAB_R2015b.app/bin
@@ -53,8 +59,8 @@ PS1='\w : \W : \$ : '
 # make vi-binding the standard -- also enabled in .inputrc
 set -o vi
 
-# brew alias, so that terminal runs the newest emacs version
-alias emacs="/usr/local/Cellar/emacs/24.5/Emacs.app/Contents/MacOS/Emacs"
+# A daemon is set to launch in /Libary/LaunchDaemons.*emacs.plist
+alias emacs='emacsclient -c --no-wait'
 
 alias vim='mvim'
 
