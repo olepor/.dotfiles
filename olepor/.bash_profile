@@ -16,7 +16,7 @@ fi
 # run the linking from dot files at every login
 # First pull
 git -C ~/dotfiles pull
-~/dotfiles/bash_scripts/symlink_dotfiles 
+bash ~/dotfiles/bash_scripts/symlink_dotfiles 
 
 # Set the prompt to show the path-to-cur-dir: cur-dir: $: 
 PS1='\w : \W : \$ : '
