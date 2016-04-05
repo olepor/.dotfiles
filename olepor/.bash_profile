@@ -40,6 +40,13 @@ then
 	bash ~/dotfiles/bash_scripts/symlink_dotfiles 
 fi
 
+# if spacemacs is not installed. Clone the repo
+if [ ! -d ~/.emacs.d/private ]
+then
+    rm -rf  ~/.emacs.d
+    git clone https://github.com/syl20bnr/spacemacs ~/.emacs.d
+fi
+
 # Set the prompt to show the path-to-cur-dir: cur-dir: $: 
 PS1='\w : \W : \$ : '
 
