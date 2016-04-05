@@ -3,7 +3,7 @@ f=`find -d ~/dotfiles | grep -E "\/[.][a-z]+" | grep -v "\/.git\/" | grep -v ".g
 for file in $f
 do
 	echo ${file}
-	link ${file} ~/
+	ln -s -F -f ${file} ~/
 done
 
 

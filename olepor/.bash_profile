@@ -8,10 +8,15 @@ which -s brew
 if [[ $? != 0 ]] ; then
     # Install Homebrew
     # https://github.com/mxcl/homebrew/wiki/installation
-    /usr/bin/ruby -e "$(curl -fsSL https://raw.github.com/gist/323731)"
+    /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 else
     brew update
 fi
+
+# run the linking from dot files at every login
+# First pull
+git -C ~/dotfiles pull
+~/dotfiles/bash_scripts/symlink_dotfiles 
 
 # Set the prompt to show the path-to-cur-dir: cur-dir: $: 
 PS1='\w : \W : \$ : '
