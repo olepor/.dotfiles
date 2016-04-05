@@ -59,7 +59,8 @@ PS1='\w : \W : \$ : '
 # make vi-binding the standard -- also enabled in .inputrc
 set -o vi
 
-# A daemon is set to launch in /Libary/LaunchDaemons.*emacs.plist
+# A daemon is set to launch in /Libary/LaunchAgents.*emacs.plist
+# So that it is always loaded on login :)
 alias emacs='emacsclient -c --no-wait'
 
 alias vim='mvim'
