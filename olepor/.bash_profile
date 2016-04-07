@@ -30,6 +30,8 @@ then
 fi
 
 # run the linking from dot files at every login
+# Keep a copy of the brewfile in home
+brew bundle dump --force --path=~/dotfiles/brewfiles/
 
 # download the dot files directory if it does not exist
 if [ ! -d ~/dotfiles ]
