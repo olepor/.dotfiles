@@ -61,7 +61,7 @@ PS1='\w : \W : \$ ~ '
 set -o vi
 
 # A daemon is set to launch in /Libary/LaunchAgents.*emacs.plist
-# So that it is always loaded on login
+# So that it is always loaded on logins
 alias emacs='emacsclient -c --no-wait'
 
 alias vim='mvim'
