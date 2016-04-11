@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+echo usage: [file] [printer]
+file=${1}
+printer=${2}
+echo $2
+scp ${1} olepor@login.uio.no:~/
+LC_ALL=C ssh -t -t olepor@login.ifi.uio.no <<EOT
+ppr -P ${printer} ${file}
+logout
+EOT

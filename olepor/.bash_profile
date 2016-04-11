@@ -56,9 +56,6 @@ then
     git clone https://github.com/syl20bnr/spacemacs ~/.emacs.d
 fi
 
-# Set the prompt to show the path-to-cur-dir: cur-dir: $: 
-PS1='\w : \W : \$ ~ '
-
 # make vi-binding the standard -- also enabled in .inputrc
 set -o vi
 
