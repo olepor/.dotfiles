@@ -6,7 +6,7 @@ export ALTERNATE_EDITOR=""
 export EDITOR=emacsclient
 export PATH=/usr/local/bin:$PATH
 export USER="olepor"
-export PATH=${PATH}:/Volumes/MATLAB_R2015b/MATLAB_R2015b.app/bin
+export PATH=${PATH}:/Applications/MATLAB_R2015b.app/bin
 PATH=$PATH:~/bash_scripts
 export PATH
 export PATH=${PATH}:/Library/TeX/texbin/

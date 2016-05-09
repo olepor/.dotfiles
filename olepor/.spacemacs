@@ -51,6 +51,7 @@ values."
      ;; spell-checking
      ;; syntax-checking
      ;; version-control
+     theming
      )
    ;; List of additional packages that will be installed without being
    ;; wrapped in a layer. If you need some configuration for these
@@ -90,7 +91,7 @@ values."
    ;; directory. A string value must be a path to an image format supported
    ;; by your Emacs build.
    ;; If the value is nil then no banner is displayed. (default 'official)
-   dotspacemacs-startup-banner 'official
+   dotspacemacs-startup-banner 'nil
    ;; List of items to show in the startup buffer. If nil it is disabled.
    ;; Possible values are: `recents' `bookmarks' `projects'.
    ;; (default '(recents projects))
@@ -217,11 +218,14 @@ user code."
   ;;(add-hook 'doc-view-mode-hook 'auto-revert-mode)
 
   ;; Matlab path add
-  (add-to-list 'load-path "Volumes/MATLAB_R2015b/MATLAB_R2015b.app/bin")
+  (add-to-list 'load-path "/Applications/MATLAB_R2015b.app/bin")
   (load-library "matlab-load")
 
+  ;; modify the misterioso background-color for line-highlight
+  (custom-theme-set-faces
+   'misterioso
+   '(hl-line ((t (:background "#292b2e")))))
   )
-
 (defun dotspacemacs/user-config ()
   "Configuration function for user code.
  This function is called at the very end of Spacemacs initialization after
