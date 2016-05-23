@@ -37,7 +37,7 @@ values."
      c-c++
      common-lisp
      extra-langs
-     ;; markdown
+     markdown
      org
      (shell :variables
             shell-default-shell 'shell
@@ -61,6 +61,7 @@ values."
                                       (focus :local (recipe
                                                              :fetcher github
                                                              :repo "larstvei/Focus"))
+                                      colour-region
                                       )
    ;; A list of packages and/or extensions that will not be install and loaded.
    dotspacemacs-excluded-packages '()
@@ -220,16 +221,17 @@ user code."
   ;; Matlab path add
   (add-to-list 'load-path "/Applications/MATLAB_R2015b.app/bin")
   (load-library "matlab-load")
+  )
+
+(defun dotspacemacs/user-config ()
+  "Configuration function for user code.
+ This function is called at the very end of Spacemacs initialization after
+layers configuration. You are free to put any user code."
 
   ;; modify the misterioso background-color for line-highlight
   (custom-theme-set-faces
    'misterioso
    '(hl-line ((t (:background "#292b2e")))))
-  )
-(defun dotspacemacs/user-config ()
-  "Configuration function for user code.
- This function is called at the very end of Spacemacs initialization after
-layers configuration. You are free to put any user code."
 
   ;; Cheers to https://mssun.me/blog/spacemacs-and-latex.html
   (cond
@@ -237,6 +239,12 @@ layers configuration. You are free to put any user code."
     (progn (setq TeX-view-program-selection '((output-pdf "Skim")))))
    ((string-equal system-type "gnu/linux")
     (progn (setq TeX-view-program-selection '((output-pdf "Okular"))))))
+
+  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+  ;;;; Evil fix, to give some keymaps sense
+  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+  (define-key evil-normal-state-map (kbd "H") (kbd "^")) ; H goes to beginning of the line
+  (define-key evil-normal-state-map (kbd "L") (kbd "$")) ; L Goes to the end of line
  )
 
 ;; Do not write anything past this comment. This is where Emacs will
