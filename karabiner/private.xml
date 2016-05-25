@@ -15,6 +15,32 @@
         KeyCode::ESCAPE
       </autogen>
     </item>
+<item>
+      <!--
+	  Change left shift tap to window left, and shift hold for shift
+      -->
+      <name>Shift to Left Window and Shift on hold</name>
+      <appendix>Tap Shift for Window Left, and Hold for Shift</appendix>
+      <appendix>Works well with using Seil to remap CapsLock to F19(code 80).</appendix>
+      <identifier>olepor.remap.shift_L_Window_shift</identifier>
+      <autogen>
+        __KeyOverlaidModifier__
+        KeyCode::SHIFT_L,
+        KeyCode::SHIFT_L,
+	KeyCode::CURSOR_LEFT, ModifierFlag::CONTROL_L,
+      </autogen>
+    </item>
+    <item>
+	    <name>Shift to right window move on touch, shift on hold</name>
+	    <appendix>Tap to move, hold to shift</appendix>
+	    <identifier>olepor.remap_right_shift_to_move</identifier>
+      <autogen>
+        __KeyOverlaidModifier__
+        KeyCode::SHIFT_R,
+        KeyCode::SHIFT_R,
+	KeyCode::CURSOR_RIGHT, ModifierFlag::CONTROL_L,
+      </autogen>
+    </item>
     <item>
       <name>Vi Navigation in Preview</name>
       <identifier>private.preview.vinav</identifier>

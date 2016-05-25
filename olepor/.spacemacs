@@ -244,7 +244,9 @@ layers configuration. You are free to put any user code."
   ;;;; Evil fix, to give some keymaps sense
   ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
   (define-key evil-normal-state-map (kbd "H") (kbd "^")) ; H goes to beginning of the line
-  (define-key evil-normal-state-map (kbd "L") (kbd "$")) ; L Goes to the end of line
+  (define-key evil-normal-state-map (kbd "L") (kbd "$")) ; L Goes the end of the line
+  ;;(define-key evil-normal-state-map (kbd "j") 'evil-next-visual-line)
+  ;;(define-key evil-normal-state-map (kbd "k") 'evil-previous-visual-line)
  )
 
 ;; Do not write anything past this comment. This is where Emacs will
