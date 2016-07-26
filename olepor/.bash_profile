@@ -10,6 +10,7 @@ export PATH=${PATH}:/Applications/MATLAB_R2015b.app/bin
 PATH=$PATH:~/bash_scripts
 export PATH
 export PATH=${PATH}:/Library/TeX/texbin/
+export PATH=${PATH}:/usr/local/gnat/bin
 
 which -s brew
 if [[ $? != 0 ]] ; then

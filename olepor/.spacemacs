@@ -25,7 +25,7 @@ values."
      ;; ----------------------------------------------------------------
      (auto-completion :variables
                       auto-completion-return-key-behavior 'nil
-                      auto-completion-tab-key-behavior 'cycle
+                      auto-completion-tab-key-behavior 'complete
                       auto-completion-complete-with-key-sequence "jk"
                       auto-complete-with-key-sequence-delay 0.1
                       auto-completion-private-snippets-directory nil
@@ -39,6 +39,8 @@ values."
      extra-langs
      markdown
      org
+     vhdl
+     no-dots
      (shell :variables
             shell-default-shell 'shell
             shell-default-height 30
@@ -85,7 +87,7 @@ values."
    ;; unchanged. (default 'vim)
    dotspacemacs-editing-style 'vim
    ;; If non nil output loading progress in `*Messages*' buffer. (default nil)
-   dotspacemacs-verbose-loading nil
+   dotspacemacs-verbose-loading t
    ;; Specify the startup banner. Default value is `official', it displays
    ;; the official spacemacs logo. An integer value is the index of text
    ;; banner, `random' chooses a random text banner in `core/banners'
@@ -112,7 +114,7 @@ values."
    dotspacemacs-colorize-cursor-according-to-state t
    ;; Default font. `powerline-scale' allows to quickly tweak the mode-line
    ;; size to make separators look not too crappy.
-   dotspacemacs-default-font '("Source Code Pro"
+   dotspacemacs-default-font '("powerline-scale"
                                :size 13
                                :weight normal
                                :width normal
@@ -200,7 +202,7 @@ values."
    dotspacemacs-highlight-delimiters 'all
    ;; If non nil advises quit functions to keep server open when quitting.
    ;; (default nil)
-   dotspacemacs-persistent-server nil
+   dotspacemacs-persistent-server t
    ;; List of search tool executable names. Spacemacs uses the first installed
    ;; tool of the list. Supported tools are `ag', `pt', `ack' and `grep'.
    ;; (default '("ag" "pt" "ack" "grep"))
@@ -219,8 +221,8 @@ user code."
   ;;(add-hook 'doc-view-mode-hook 'auto-revert-mode)
 
   ;; Matlab path add
-  (add-to-list 'load-path "/Applications/MATLAB_R2015b.app/bin")
-  (load-library "matlab-load")
+  ;; (add-to-list 'load-path "/Applications/MATLAB_R2015b.app/bin")
+  ;; (load-library "matlab-load")
   )
 
 (defun dotspacemacs/user-config ()
@@ -232,6 +234,13 @@ layers configuration. You are free to put any user code."
   (custom-theme-set-faces
    'misterioso
    '(hl-line ((t (:background "#292b2e")))))
+
+  (setq powerline-default-separator 'nil)
+
+  ;; evaluate with ee
+  (spacemacs/set-leader-keys
+    "ee" 'eval-last-sexp
+    )
 
   ;; Cheers to https://mssun.me/blog/spacemacs-and-latex.html
   (cond
