@@ -40,7 +40,7 @@ values."
      markdown
      org
      vhdl
-     no-dots
+     no-dots ;; disables dots in helm directory viewer
      (shell :variables
             shell-default-shell 'shell
             shell-default-height 30
@@ -220,9 +220,6 @@ user code."
   ;; from the layer doc - in order to perform full document previews
   ;;(add-hook 'doc-view-mode-hook 'auto-revert-mode)
 
-  ;; Matlab path add
-  ;; (add-to-list 'load-path "/Applications/MATLAB_R2015b.app/bin")
-  ;; (load-library "matlab-load")
   )
 
 (defun dotspacemacs/user-config ()
@@ -240,8 +237,14 @@ layers configuration. You are free to put any user code."
   ;; evaluate with ee
   (spacemacs/set-leader-keys
     "ee" 'eval-last-sexp
+    "eb" 'eval-buffer
     )
 
+  ;; Matlab path add
+  (add-to-list 'load-path "/Applications/MATLAB_R2015b.app/bin")
+  (load-library "matlab-load")
+
+  (setq inferior-lisp-program "/usr/local/bin/sbcl")
   ;; Cheers to https://mssun.me/blog/spacemacs-and-latex.html
   (cond
    ((string-equal system-type "darwin")
@@ -250,10 +253,15 @@ layers configuration. You are free to put any user code."
     (progn (setq TeX-view-program-selection '((output-pdf "Okular"))))))
 
   ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-  ;;;; Evil fix, to give some keymaps sense
+  ;;;; Evil fix, for key consistency
   ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
   (define-key evil-normal-state-map (kbd "H") (kbd "^")) ; H goes to beginning of the line
+  (define-key evil-visual-state-map (kbd "H") (kbd "^")) ;; same goes for v-mode
   (define-key evil-normal-state-map (kbd "L") (kbd "$")) ; L Goes the end of the line
+  (define-key evil-visual-state-map (kbd "L") (kbd "$"))
+  (define-key evil-motion-state-map (kbd "L") (kbd "$")) ; Keep motions consistent 
+  (define-key evil-motion-state-map (kbd "H") (kbd "^"))
+
   ;;(define-key evil-normal-state-map (kbd "j") 'evil-next-visual-line)
   ;;(define-key evil-normal-state-map (kbd "k") 'evil-previous-visual-line)
  )

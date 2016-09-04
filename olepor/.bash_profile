@@ -77,3 +77,4 @@ CDPATH=~/.paths
 
 # Everytime a new terminal is loaded, update the brew_installs file
 # now migrated to a brewfile. Check out https://github.com/Homebrew/homebrew-bundle
+eval "$(pyenv init -)"
