@@ -224,6 +224,7 @@ It is called immediately after `dotspacemacs/init'.  You are free to put any
 user code."
   ;; from the layer doc - in order to perform full document previews
   ;;(add-hook 'doc-view-mode-hook 'auto-revert-mode)
+  (add-to-load-path-if-exists "~/CodeFoo/private/emacs/spaceline-mod/")
 
   )
 
@@ -243,9 +244,16 @@ layers configuration. You are free to put any user code."
   ;; Try to use the 'all-the-icons' package for pretty pretty macs
   (setq neo-theme (if (display-graphic-p) 'icons 'arrow))
 
-  ;; Powerline mods
+  ;; Powerline/Spaceline mods
   ;; Looks prettier with straight seperators
-  (setq powerline-default-separator 'nil)
+  ;; (setq powerline-default-separator 'nil)
+  (use-package spaceline-all-the-icons :after spaceline ;; Not working atm TODO Fix!
+                       :load-path "~/.emacs.d/private/local/")
+  (use-package spaceline :after powerline
+    :config (setq-default mode-line-format '("%e" (:eval (spaceline-ml-ati)))))
+  ;; Code for using all-the-icons icons with spaceline for pretty prettiness
+  ;; (use-package spaceline-all-the-icons :after spaceline
+  ;;   :load-path "~/CodeFoo/private/emacs/spaceline-mod/") ;; Not working atm
 
   ;; evaluate with ee
   (spacemacs/set-leader-keys
