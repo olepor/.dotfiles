@@ -579,7 +579,7 @@ you should place your code here."
 
   ;; Add bitbake.el as a syntax highlighter for bitbake files
   ;; TODO - fix regex!
-  (add-to-list 'auto-mode-alist '("\\.\(bb\\|bbclass\\|bbappend\\|inc)" . bitbake-mode))
+  (add-to-list 'auto-mode-alist '("\\.\\(bb\\|inc\\)[class]?\\'" . bitbake-mode))
 
   )
 
